@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sistemas Operativos Avanzado</string>
+
+    <string name="app_env">TEST</string>
+    <string name="api_auth">Bearer</string>
+
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Main2Activity"
+    tools:showIn="@layout/activity_main2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            android:text="Tiempo restante de sesion:" />
+
+        <TextView
+            android:id="@+id/time_token"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:capitalize="characters"
+            android:gravity="center_horizontal"
+            android:text="Sensores"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20sp"
+            android:paddingRight="20sp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Giroscopio" />
+
+                <LinearLayout
+                    android:layout_width="284dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="20sp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="X:" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Y:" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Z:" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/giro_x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0 deg/s" />
+
+                        <TextView
+                            android:id="@+id/giro_y"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0 deg/s" />
+
+                        <TextView
+                            android:id="@+id/giro_z"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0 deg/s" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Proximidad" />
+
+                <ProgressBar
+                    android:id="@+id/proximity"
+                    style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:keepScreenOn="true"
+                    android:longClickable="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressBackgroundTint="@color/design_default_color_primary"
+                    android:progressBackgroundTintMode="src_in"
+                    android:progressTint="@android:color/holo_blue_dark"
+                    android:progressTintMode="src_in"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollbars="horizontal" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iniciar deteccion" />
+
+    </LinearLayout>
+
+</LinearLayout>
