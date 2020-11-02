@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "209191836387",
+    "firebase_url": "https://soa-ea2-7c225.firebaseio.com",
+    "project_id": "soa-ea2-7c225",
+    "storage_bucket": "soa-ea2-7c225.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209191836387:android:b55bddaf87bd2d79fe43d6",
+        "android_client_info": {
+          "package_name": "ar.com.lbilello.soa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209191836387-34h82u5m3j63mtkek615ej1rlceo0j4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgXNVtES17UnANgQolAgORvqY8rNE6zv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209191836387-34h82u5m3j63mtkek615ej1rlceo0j4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

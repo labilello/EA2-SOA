@@ -5,9 +5,9 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="action_sign_up">Registrarse</string>
-    <string name="invalid_email">This email address is invalid</string>
-    <string name="invalid_password">Password is too short</string>
-    <string name="invalid_dni">DNI is too short</string>
-    <string name="incorrect_password">Password is incorrect</string>
-    <string name="field_required">This field is required</string>
+    <string name="invalid_email">El email ingresado es invalido</string>
+    <string name="invalid_password">La contraseña es demasiado corta</string>
+    <string name="invalid_dni">El DNI es demasiado corto</string>
+    <string name="incorrect_password">La contraseña es incorrecta</string>
+    <string name="field_required">Este campo es obligatorio</string>
 </resources>

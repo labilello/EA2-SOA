@@ -13,7 +13,7 @@ import ar.com.lbilello.soa.Main2Activity;
 
 public class TokenLive implements Runnable {
 
-    private final int DURATION_TOKEN = 2;
+    private final int DURATION_TOKEN = 30;
     private Calendar finishTime;
 
 
@@ -44,9 +44,7 @@ public class TokenLive implements Runnable {
 
             msg = new Message();
             msg.setData( bundle );
-            synchronized ( handler ) {
-                handler.sendMessage( msg );
-            }
+            handler.sendMessage( msg );
 
             try {
                 Thread.sleep(1000);

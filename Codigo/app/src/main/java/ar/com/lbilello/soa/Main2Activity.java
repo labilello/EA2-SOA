@@ -85,8 +85,8 @@ public class Main2Activity extends AppCompatActivity implements SensorEventListe
         countdown = new Thread( new TokenLive( user.getTimeToken() ) );
         countdown.setName("COUNTDOWN");
         timeTokenHandler = handler_token();
-        countdown.start();
 
+        countdown.start();
 
         // =================== SENSORES =======================
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -122,9 +122,7 @@ public class Main2Activity extends AppCompatActivity implements SensorEventListe
         return new Handler() {
             @Override
             public void handleMessage(@NonNull Message msg) {
-                synchronized ( this ) {
-                    updateTimeToken( msg.getData().getLong("H"), msg.getData().getLong("M") );
-                };
+                updateTimeToken( msg.getData().getLong("H"), msg.getData().getLong("M") );
             }
         };
     }

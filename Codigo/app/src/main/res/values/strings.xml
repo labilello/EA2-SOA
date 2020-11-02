@@ -1,12 +1,22 @@
 <resources>
     <string name="app_name">Sistemas Operativos Avanzado</string>
 
-    <string name="app_env">TEST</string>
+    <string name="app_env">PROD</string>
     <string name="api_auth">Bearer</string>
 
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="con_ok">Conexion estable</string>
+    <string name="con_fail">Sin conexion a internet</string>
 
-    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_main2">Lista de sensores</string>
+
+    <string name="title_activity_register">Registro</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="msg_token_fmt">TOKEN GENERADO: %s</string>
+
+
+
+    <string name="fcm_message">fcm_message </string>
+    <string name="default_notification_channel_id">00</string>
 </resources>

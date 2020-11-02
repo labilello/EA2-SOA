@@ -1,20 +1,17 @@
 package ar.com.lbilello.soa;
 
-import android.annotation.SuppressLint;
-
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONObject;
 
 import ar.com.lbilello.soa.io.UserApiAdapter;
 import ar.com.lbilello.soa.io.response.UserResponse;
@@ -67,8 +64,9 @@ public class RegisterActivity extends AppCompatActivity {
         findViewById(R.id.register_button).setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                verifyInputs();
-                doRegister();
+                if( isValidInputs() ) {
+                    doRegister();
+                }
             }
         });
     }
@@ -100,8 +98,13 @@ public class RegisterActivity extends AppCompatActivity {
                     finish();
 
                 } else if ( response.code() == 400 ) {
-                    Toast.makeText(getApplicationContext(),  "Datos incorrectos!", Toast.LENGTH_LONG ).show();
-
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        Toast.makeText(getApplicationContext(), jObjError.getString("msg"), Toast.LENGTH_LONG ).show();
+                        Log.d("RESPONSE", jObjError.getString("msg"));
+                    } catch (Exception e) {
+                        Log.d("RESPONSE-CATCH", e.getMessage() );
+                    }
                 } else if ( response.code() > 400 ) {
                     Toast.makeText(getApplicationContext(),  "Error al verificar los datos!", Toast.LENGTH_LONG ).show();
                 }
@@ -119,7 +122,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private boolean verifyInputs() {
+    private boolean isValidInputs() {
         boolean isOk = true;
 
         if ( !isEmailValid( email.getText().toString() ) ) {
@@ -158,7 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean isCommissionValid(String commission) {
-        return ( !TextUtils.isEmpty( commission ) && commission.length() > 1 );
+        return ( !TextUtils.isEmpty( commission ) );
     }
 
 

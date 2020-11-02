@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 import ar.com.lbilello.soa.io.UserApiAdapter;
 import ar.com.lbilello.soa.io.response.EventResponse;
-import ar.com.lbilello.soa.io.response.UserResponse;
-import ar.com.lbilello.soa.models.User;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,13 +27,13 @@ public class Utils {
 
         if ( !hasConnection( context ) ) {
             conStatus.setTextColor( context.getResources().getColor( R.color.error_text ));
-            conStatus.setText("Sin conexion a internet");
+            conStatus.setText( context.getString( R.string.con_fail ));
 
             btnSubmit.setEnabled( false );
             btnSubmit.setTextColor( context.getResources().getColor( R.color.darker_gray ));
         } else {
             conStatus.setTextColor( context.getResources().getColor( R.color.colorPrimary ));
-            conStatus.setText("Conexion estable");
+            conStatus.setText(  context.getString( R.string.con_ok ) );
 
             btnSubmit.setTextColor( context.getResources().getColor( R.color.accent ));
             btnSubmit.setEnabled( true );

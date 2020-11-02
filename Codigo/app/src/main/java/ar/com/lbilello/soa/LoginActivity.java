@@ -1,5 +1,6 @@
 package ar.com.lbilello.soa;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +21,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import org.json.JSONObject;
 
 import java.io.Serializable;
 
@@ -116,8 +123,15 @@ public class LoginActivity extends AppCompatActivity {
             finish();
 
         } else if ( response.code() == 400 ) {
+            try {
+                JSONObject jObjError = new JSONObject(response.errorBody().string());
+                Toast.makeText(getApplicationContext(), jObjError.getString("msg"), Toast.LENGTH_LONG ).show();
+                Log.d("RESPONSE", jObjError.getString("msg"));
+            } catch (Exception e) {
+                Log.d("RESPONSE-CATCH", e.getMessage() );
+            }
             user = null;
-            Toast.makeText(this,  "Datos incorrectos!", Toast.LENGTH_LONG ).show();
+//            Toast.makeText(this,  "Datos incorrectos!", Toast.LENGTH_LONG ).show();
             showProgress( false );
 
         } else if ( response.code() > 400 ) {
@@ -182,4 +196,6 @@ public class LoginActivity extends AppCompatActivity {
 
         Utils.verifyConnection(this, status, button);
     }
+
+
 }
